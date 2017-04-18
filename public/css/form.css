@@ -1,0 +1,44 @@
+form{
+  text-align: left;
+  margin-left:5%;
+  margin-bottom:3%;
+  padding-top:1%;
+}
+.input-group {
+  margin-bottom: 12px;
+}
+.input-group label{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.input-group input,
+.input-group textarea,
+.input-group select{
+  width: 80%;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 10px;
+  padding: 4px 3px;
+  vertical-align: top;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+  border: :1px solid #8863d3;
+}
+.input-group select{
+  width: 30%;
+  max-width: 280px;
+  min-width: 150px;
+  height: 28px;
+}
+form button{
+  font-size: 16px;
+  cursor: pointer;
+}
+.input-group input.has-error,
+.input-group textarea.has-error{
+  border: 1px solid red;
+}
