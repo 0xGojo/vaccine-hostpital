@@ -17,21 +17,35 @@
       </section>
       <section class="list">
                 <ul>
-          @if(empty($posts))   <!-- if no posts ..-->
+          @if(empty($khachtiems))   <!-- if no posts ..-->
           <li>No posts</li>
           @else                <!--else-->
-          @foreach($posts as $post)
-          <li>
-            <article class="">
-                <div class="edit">
-                  <nav>
-                    <ul>
-                    </ul>
-                  </nav>
-                </div>
-            </article>
-          </li>
+          <table>
+          <tr>
+                <th>id</th>
+                <th>ten</th>
+                <th>gioi tinh</th>
+                <th>Dia chi</th>
+                <th>Ngay sinh</th>
+                <th>Edit</th>
+          </tr>
+
+          @foreach($khachtiems as $khachtiem)
+          <tr>
+            <td>{{$khachtiem->id}}</td>
+            <td>{{$khachtiem->name}}</td>
+            <td>@if($khachtiem->gioitinh==1) Nam @else Nu @endif</td>
+            <td>{{$khachtiem->diachi}}</td>
+            <td>{{$khachtiem->ngaysinh}}</td>
+            <td>
+              <div class="edit">
+                <button type="button" class="btn" name="button">Edit</button>
+                <button type="button" name="button" class="btn danger">Delete</button>
+              </div>
+            </td>
+          </tr>
           @endforeach
+          </table>
           @endif
         </ul>
       </section>

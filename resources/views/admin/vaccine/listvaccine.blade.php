@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    admin page
+    vaccine
 @endsection
 @section('links')
 <ul>
@@ -16,22 +16,42 @@
          <button type="button" name="button" class="btn">Tim kiem</button>
       </section>
       <section class="list">
-                <ul>
-          @if(empty($posts))   <!-- if no posts ..-->
-          <li>No posts</li>
+                <ul> <!-- if no posts ..-->
+          @if(count($vaccines)<1)
+          <li>No vaccines</li>
           @else                <!--else-->
-          @foreach($posts as $post)
-          <li>
-            <article class="">
-                <div class="edit">
-                  <nav>
-                    <ul>
-                    </ul>
-                  </nav>
-                </div>
-            </article>
-          </li>
+          <table>
+          <tr>
+                <th>id</th>
+                <th>ten vaccine</th>
+                <th>tac dung</th>
+                <th>Chi dinh</th>
+                <th>Chong chi dinh</th>
+                <th>Tac dung phu</th>
+                <th>Gia</th>
+                <th>Ma loai vaccine</th>
+                <th>Edit</th>
+          </tr>
+
+          @foreach($vaccines as $vaccine)
+          <tr>
+            <td>{{$vaccine->id}}</td>
+            <td>{{$vaccine->name}}</td>
+            <td>{{$vaccine->tacdung}}</td>
+            <td>{{$vaccine->chidinh}}</td>
+            <td>{{$vaccine->chongchidinh}}</td>
+            <td>{{$vaccine->tacdungphu}}</td>
+            <td>{{$vaccine->gia}}</td>
+            <td>{{$vaccine->loaivacxin_id}}</td>
+            <td>
+              <div class="edit">
+                <button type="button" class="btn" name="button">Edit</button>
+                <button type="button" name="button" class="btn danger">Delete</button>
+              </div>
+            </td>
+          </tr>
           @endforeach
+          </table>
           @endif
         </ul>
       </section>

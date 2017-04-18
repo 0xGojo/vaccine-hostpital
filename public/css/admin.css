@@ -97,3 +97,36 @@ header .admin{
   background-color: white;
   color: blue;
 }
+.list{
+  margin-right: 3%;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 10px;
+    margin: 1%;
+}
+table button:hover,
+table button:active{
+  background-color: white !important;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+
+}
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+.danger{
+  background-color: red !important;
+  color: white;
+}

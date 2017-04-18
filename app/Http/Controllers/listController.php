@@ -1,17 +1,20 @@
 <?php
 namespace App\Http\Controllers;
 //use App\Post;
+use App\vaccine;
+use App\khachtiem;
 class listController extends  Controller
 {
   public function getAdminVaccinePage()
   {
     //$posts= Post::all();
-    return view('admin.vaccine.listvaccine');
+    $vaccines = vaccine::all();
+    return view('admin.vaccine.listvaccine',['vaccines'=>$vaccines]);
   }
   public function getAdminKhachTiemPage()
   {
-    //$posts= Post::all();
-    return view('admin.khachtiem.listkhachtiem');
+    $khachtiems= khachtiem::paginate(5);
+    return view('admin.khachtiem.listkhachtiem',['khachtiems'=>$khachtiems]);
   }
   public function getAdminLichTiemPhongPage()
   {

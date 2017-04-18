@@ -17,16 +17,17 @@
 @section('content')
         <!-- neead a loop to show all vaccines-->
         <div class="container">
-          <form class="add" action="" method="post">
+          @include('includes.info-box')
+          <form class="add" action="{{route('AddKhachTiem')}}" method="post" enctype="multipart/form-data">
             <div class="input-group">
-              <label for="makhach">Ten</label>
-              <input type="text" name="makhach" >
+              <label for="name">Ten</label>
+              <input type="text" name="name" >
             </div>
             <div class="input-group">
               <label for="gender">Gioi tinh</label>
               <select class="" name="gender">
-                <option value="male">Nam</option>
-                <option value="female">Nu</option>
+                <option value="1">Nam</option>
+                <option value="0">Nu</option>
               </select>
             </div>
             <div class="input-group">
@@ -44,6 +45,10 @@
             <div class="input-group">
               <label for="password">Mat khau</label>
               <input type="password" name="password" >
+            </div>
+            <div class="input-group">
+              <label for="img">Anh dai dien</label>
+              <input type="file" name="img" >
             </div>
             <button type="submit" class="btn">Them</button>
             <input type="hidden" name="_token" value="{{Session::token()}}">

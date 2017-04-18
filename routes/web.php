@@ -41,6 +41,10 @@ Route::group(['prefix'=>'/admin'],function(){
     'uses'=>'adminedit@adminAddVaccine',
     'as'=>'getAdminAddVaccine'
   ]);
+  Route::post('/vaccine/addin',[
+    'uses'=>'adminedit@AddVaccine',
+    'as'=>'AddVaccine'
+  ]);
   Route::get('/khachtiem',[
     'uses'=>'listController@getAdminKhachTiemPage',
     'as'=>'getAdminKhachTiemPage'
@@ -48,6 +52,10 @@ Route::group(['prefix'=>'/admin'],function(){
   Route::get('/khachtiem/add',[
     'uses'=>'adminedit@adminAddKhachTiem',
     'as'=>'getAdminAddKhachTiem'
+  ]);
+  Route::post('/khachtiem/addin',[
+    'uses'=>'adminedit@AddKhachTiem',
+    'as'=>'AddKhachTiem'
   ]);
   Route::get('/lichtiemphong',[
     'uses'=>'listController@getAdminLichTiemPhongPage',
